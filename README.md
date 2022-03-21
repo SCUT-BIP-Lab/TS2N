@@ -42,6 +42,6 @@ configuration and building method ([tds_net_3d](/model/tds_net_3d.py)) of 3DTDS-
 the random hand gesture loading strategy ([frame_dataloader](/dataset/frame_dataloader.py)).
 
 If you want to explore the entire dynamic hand gesture authentication framework, please refer to our pervious work [SCUT-DHGA](https://github.com/SCUT-BIP-Lab/SCUT-DHGA) 
-or send an email to Prof. Kang ([email](auwxkang@scut.edu.cn)).
+or send an email to Prof. Kang (auwxkang@scut.edu.cn).
 
 
