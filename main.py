@@ -11,8 +11,9 @@ def feedforward_demo(frame_length, feature_dim, out_dim):
     behavior_model = Model_Gaitset_PAN(frames_per_video=frame_length, feature_dim=feature_dim, out_dim=out_dim)
 
     # there are 143 identities in the training set
-    data = torch.randn(2, 20, 3, 224, 224) #batch, frame, channel, h, w
-    physical_feature, behavior_feature = physical_model(data), behavior_model(data) # feedforward
+    data = torch.randn(2, 20, 3, 224, 224) #appearanceBranchInputs & motionBranchInputs: batch, frame, channel, h, w
+    physical_feature, behavior_feature = physical_model(data), behavior_model(data) # appearanceBranchOutputs & motionBranchOutputs: batch,dim 
+                                                                                    # (physical_feature:Bx512, behavior_feature:Bx1024)
     
     return {physical_feature, behavior_feature}
 

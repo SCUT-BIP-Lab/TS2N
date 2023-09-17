@@ -155,7 +155,7 @@ class Model_Resnet_Att(torch.nn.Module):
     def forward(self, data):
 
         fis = {}  # 字典存结果
-        B, N, C, W, H = data.shape
+        B, N, C, W, H = data.shape 
         
         x = data.view((-1, C, W, H))
 
@@ -170,7 +170,7 @@ class Model_Resnet_Att(torch.nn.Module):
             x = layer(x)
 
         x = self.cv_model.layer3[0](x)
-        x = self.att(x)
+        x = self.att(x)                #Attention_Inputs & Attention_Outputs: batch x video_length, C=256, H=14, W=14 
         x = self.cv_model.layer3[1](x)
 
         x = self.cv_model.layer4(x)

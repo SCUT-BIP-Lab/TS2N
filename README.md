@@ -1,4 +1,4 @@
-# 3DTDS-Net: 3D Temporal Difference Symbiotic Neural Network 
+# Random Hand Gesture Authentication via Efficient Temporal Segment Set Network 
 Pytorch Implementation of paper:
 
 > **Random Hand Gesture Authentication via Efficient Temporal Segment Set Network**
