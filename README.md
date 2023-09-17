@@ -1,45 +1,27 @@
 # 3DTDS-Net: 3D Temporal Difference Symbiotic Neural Network 
 Pytorch Implementation of paper:
 
-> **Video Understanding Based Random Hand Gesture Authentication**
+> **Random Hand Gesture Authentication via Efficient Temporal Segment Set Network**
 >
-> Wenwei Song, Wenxiong Kang\*, Lu Wang, Zenan Lin and Mengting Gan.
+> Yihong Lin, Wenwei Song and Wenxiong Kang\*.
 
 ## Main Contribution
-Existing hand gesture authentication methods require the probe gesture types to be consistent with
- the registered ones, which reduces the user-friendliness and efficiency of authentication. 
- In this paper, a video understanding based random hand gesture authentication method is introduced to eliminate 
- this limitation, in which users only need to improvise a random hand gesture in front of an RGB camera without memory 
- and hesitation in both the enrollment and verification stage. The random hand gesture is a promising biometric trait 
- containing both physiological and behavioral characteristics. To fully unleash the potential of random hand gesture 
- authentication, we design a simple but effective behavior representation (modality), temporal difference map, for better 
- behavioral characteristic understanding and present an efficient model called 3D Temporal Difference Symbiotic Neural 
- Network (3DTDS-Net) that can separately extract physiological and behavioral features as well as automatically assign 
- fusion weights for the two features to complement each other’s strengths based on the magnitude of behavioral features 
- in an end-to-end fashion. We also adapt and reimplement 17 SOTA neural networks for authentication from other tasks, 
- such as action classification and gait recognition, to make convincing comparisons. Extensive experiments on the 
- SCUT-DHGA dataset demonstrate the effectiveness of temporal difference maps and the superiority of 3DTDS-Net. 
+Biometric authentication technologies are rapidly gaining popularity, and hand gestures are emerging as a promising biometric trait due to their rich physiological and behavioral characteristics. Hand gesture authentication can be categorized as defined hand gesture authentication and random hand gesture authentication. Unlike defined hand gesture authentication, random hand gesture authentication is not constrained to specific hand gesture types, allowing users to perform hand gestures randomly during enrollment and verification, thus more flexible and friendly. However, in random hand gesture authentication, the model needs to extract more generalized physiological and behavioral features from different viewpoints and positions without gesture templates, which is more challenging. In this paper, we present a novel efficient Temporal-Segment-Set-Network (TS2N) that directly extracts both behavioral and physiological features from a single RGB video to further enhance the security of random hand gesture authentication. Our method adopts a motion pseudo-modality and leverages a set-based representation to capture behavioral characteristics online. Additionally, we propose a new channel-spatial attention mechanism, Contextual Squeeze-and-Excitation Network (CoSEN), to better abstract and understand physiological characteristics by explicitly modeling the channel and spatial interdependence, thereby adaptively recalibrating channel-specific and spatial-specific responses. Extensive experiments on the largest public hand gesture authentication dataset SCUT-DHGA demonstrate TS2N's superiority against 21 state-of-the-art models in terms of EER (5.707\% for full version and 6.664\% for lite version) and computational cost (98.9022G for full version and 46.3741G for lite version), showing a promising avenue for secure and efficient biometric authentication systems.
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://raw.githubusercontent.com/SCUT-BIP-Lab/3DTDS-Net/main/img/3DTDS-Net.png" />
-</p>
-
-## Comparisons with SOTAs
-Our 3DTDS-Net achieves very competitive performance while enjoying low computation costs for 
-fast random hand gesture authentication on SCUT-DHGA dataset.
+</p> -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SCUT-BIP-Lab/3DTDS-Net/main/img/SOTA_Comparison.png" />
+  <img src="/img/TS2N.png" />
 </p>
-
 
 ## Dependencies
 Please make sure the following libraries are installed successfully:
 - [PyTorch](https://pytorch.org/) >= 1.7.0
 
 ## How to use
-This repository is a demo of 3DTDS-Net. Through debugging ([main.py](/main.py)), you can quickly understand the 
-configuration and building method ([tds_net_3d](/model/tds_net_3d.py)) of 3DTDS-Net, as well as
-the random hand gesture loading strategy ([frame_dataloader](/dataset/frame_dataloader.py)).
+This repository is a demo of TS2N. Through debugging ([main.py](/main.py)), you can quickly understand the 
+configuration and building method ([ts2n](/model/ts2n.py)) of TS2N.
 
 If you want to explore the entire dynamic hand gesture authentication framework, please refer to our pervious work [SCUT-DHGA](https://github.com/SCUT-BIP-Lab/SCUT-DHGA) 
 or send an email to Prof. Kang (auwxkang@scut.edu.cn).
